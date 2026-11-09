@@ -1,0 +1,36 @@
+# ── Core ────────────────────────────────────────────────
+Django>=5.2,<6.0
+djangorestframework>=3.16
+djangorestframework-simplejwt>=5.5
+django-cors-headers>=4.7
+django-filter>=25.1
+drf-spectacular>=0.28
+
+# ── Database ────────────────────────────────────────────
+psycopg[binary]>=3.2
+dj-database-url>=2.3
+
+# ── Cache / Queue ───────────────────────────────────────
+redis>=5.2
+django-redis>=5.4
+celery>=5.5
+django-celery-beat>=2.8
+
+# ── Media ───────────────────────────────────────────────
+Pillow>=11.0
+cloudinary>=1.41
+django-cloudinary-storage>=0.3.0
+
+# ── Payments ────────────────────────────────────────────
+razorpay>=1.4
+
+# ── Server / Config ─────────────────────────────────────
+gunicorn>=23.0
+whitenoise>=6.8
+python-dotenv>=1.0
+
+# ── Testing ─────────────────────────────────────────────
+pytest>=8.3
+pytest-django>=4.9
+pytest-cov>=6.0
+factory-boy>=3.3
