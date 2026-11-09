@@ -1,0 +1,24 @@
+{% extends "emails/base_email.html" %}
+{% block content %}
+<h1 style="margin:0 0 8px;font-size:24px;letter-spacing:2px;color:#F5F5F5;">
+  {% if event == "shipped" %}ON ITS WAY{% elif event == "delivered" %}DELIVERED{% elif event == "cancelled" %}ORDER CANCELLED{% elif event == "return_requested" %}RETURN REQUESTED{% else %}ORDER UPDATE{% endif %}
+</h1>
+<p style="margin:0 0 24px;font-size:13px;color:#888888;letter-spacing:1px;">ORDER · {{ number }}</p>
+<p style="margin:0 0 24px;font-size:14px;line-height:1.7;color:#BBBBBB;">
+  {% if event == "shipped" %}
+    Hey {{ name }}, your order has shipped. It should reach you soon.
+  {% elif event == "delivered" %}
+    Hey {{ name }}, your order has been delivered. Wear it loud.
+  {% elif event == "cancelled" %}
+    Hey {{ name }}, your order has been cancelled. If you already paid, the refund
+    has been initiated and lands back in 5–7 business days.
+  {% elif event == "return_requested" %}
+    Hey {{ name }}, we've received your return request. Our team will reach out
+    within 24–48 hours with pickup details.
+  {% endif %}
+</p>
+<a href="{{ order_url }}"
+   style="display:inline-block;background:#C1121F;color:#FFFFFF;padding:14px 32px;font-size:12px;letter-spacing:3px;text-decoration:none;text-transform:uppercase;">
+  View Order
+</a>
+{% endblock %}
